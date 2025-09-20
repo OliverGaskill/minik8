@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+    - name: nginx
+      image: my-nginx   # must exactly match the image you built
+      imagePullPolicy: Never   # <- important! If using docker hub you could delete this, Use local image with this
+      ports:
+        - containerPort: 80
